@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                   
-                   build&push-image("${dockerHubCredentialsID}", "${imageName}")
+                          buildPushImage("${dockerHubCredentialsID}", "${imageName}")
                       
                 }
             }
@@ -24,7 +24,7 @@ pipeline {
         stage('Edit new image in the deployment') {
             steps {
                 script { 
-            editimage("${imageName}")
+                          editImage("${imageName}")
                 }
             }
         }
@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy on kubernetes Cluster') {
             steps {
                 script {  
-             deployonk8s("${k8sCredentialsID}")
+                         deployOnK8s("${k8sCredentialsID}")
                 }
             }
         }
