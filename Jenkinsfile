@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy on kubernetes Cluster') {
             steps {
                 script {  
-                         deployOnK8s("${k8sCredentialsID}")
+                         deployOnKubernetes("${k8sCredentialsID}")
                 }
             }
         }
